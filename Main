@@ -1,6 +1,6 @@
 -- Load
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("The Skid Only GUI", "Synapse")
+local Window = Library.CreateLib("Oh Shit, A Skid", "Synapse")
 
 -- First Tab and Section 1
 local Tab = Window:NewTab("Player")
