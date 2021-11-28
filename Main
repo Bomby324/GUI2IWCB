@@ -1,0 +1,31 @@
+-- Load
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Tell me what to change this to", "Synapse")
+
+-- First Tab and Section 1
+local Tab = Window:NewTab("Player")
+local Section = Tab:NewSection("Main")
+-- Sliders
+Section:NewSlider("WalkSpeed", "Changes how fast the player is.", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+Section:NewSlider("JumpPower", "Changes how high the player can jump.", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+-- Buttons
+Section:NewButton("Reset", "Kills the player.", function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+-- Section 2
+local Section = Tab:NewSection("Extra")
+Section:NewButton("Noclip", "Allows you to Noclip.", function()
+    local noclip = true char = game.Players.LocalPlayer.Character while true do if noclip == true then for _,v in pairs(char:children()) do pcall(function() if v.className == "Part" then v.CanCollide = false elseif v.ClassName == "Model" then v.Head.CanCollide = false end end) end end game:service("RunService").Stepped:wait() end
+end)
+
+-- Second Tab and Section 1
+local Tab = Window:NewTab("Scripts")
+local Section = Tab:NewSection("Read below")
+Section:NewLabel("Hello! If you are reading this that means that i")
+Section:NewLabel("currently have no scripts on the menu. If you")
+Section:NewLabel("would like to request a script to be added then")
+Section:NewLabel("contact me on discord. - HelloStaff#9275")
